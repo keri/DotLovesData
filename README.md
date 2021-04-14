@@ -7,7 +7,7 @@ time.
 
 # Questions to ask:
 
-1) How does the GMP and deprivation score change over time per area ?
+1) What to do with the null values and how is there enough information to infer missing values?
 2) Does this correlate with changes in crime rates?
 3) Can we identify major indicators of GMP per capita with the data we have?
 
@@ -21,17 +21,23 @@ This is a graph of crime incidence per capita per crime type in each area. I cal
 
 ![Crime Rate By Type of Crime Per Area for NA dataset](/visuals/NANDataCrimeDataByTALB.png)
 
-As compared to this same information for the remaining data without NA values. I also wanted to understand if the deprivation index followed the crime rate for when looking at the different TALB areas. And in fact, that is the case for many communities but not all. Overall, my conclusion was the crimes rates were quite low in most communities so wouldn't provide enough information to infer data for the 1302 rows of data so I decided to delete them from the dataset.
+As compared to this same information for the remaining data without NA values. I also wanted to understand if the deprivation index followed the crime rate for when looking at the different TALB areas. And in fact, that is the case for many communities but not all. Overall, my conclusion was the crimes rates were quite low in most communities so wouldn't provide enough information to infer data for the 1302 rows of data so I decided to delete them from the dataset. You can see there is a general trend upward for both but I feel that a lot of information is lost when taking a broader approach. I think there is insight to be gained in looking in more detail at the individual communities.
 
 ![Crime Rate By Type of Crime Per Area](/visuals/CleanedCrimeDataByTALBandDepIndexMean.png)
 
 
-## Where were these null values:
-
-
-
-
 # How does GMP change over time
 
-The dataset was too large to visualize all regions (AU codes) at once so I calculated the CHANGE of deprivation score and GMP over the dates they were recorded
+The dataset was too large to visualize all regions (AU codes) at once and the final visual still needs work to be more interpretable. I calculated the CHANGE of deprivation score and GMP from the first and last date for each code and it was a bit of a mess as there are 489 codes. I also calculcated for just the TALB regions, of which there were 24. I wanted to see how the changes correlated with eacother as I noticed that some deprivation indices actually increased while the GMP went down, so I am looking for general trends here:
+
+## GMP v Deprivation Index (DI) Over Time for all 498 different AU codes: GMP in blue and DI in red
+
+![GMP versus DI over time for AU codes](/visuals/GMPvDIOverTimePerAUCode.png)
+
+## GMP v DI Over Time for 24 different TALB regions 
+
+You can see it is quite messy so took a broader overview by lumping codes together into region with the TALB category.
+
+![GMP versus DI over time for TALB](/visuals/GMPvDIOverTimePerTALB.png)
+
 
