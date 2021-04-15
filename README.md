@@ -63,19 +63,32 @@ There is a bit of correlation between GMP and deprivation index but none between
 
 Each model was scored based on the R squared which is the coefficient of determination which is a measure of the variation in y (GMP in this case) that is explained by the data. A high R squared means you have a good model. I also validated independently with the holdout set and calculated the R squared for the holdout.
 
+-- Categorical Variables:
+
+I created categorical variables for the times for both crime occurences and date DPI was assessed. In addition, TALB, and
+
 ## Model Performance
 
 Linear Regression using the default parameters: 
+
 score = .19
+
 holdout score = didn't do
+
 
 Ridge Regression using default parameters:
+
 score = .19
+
 holdout score = didn't do
 
+
 Gradient Boosted Regressor:
+
 model score = .7554
+
 holdout score = .7557
+
 
 ## Feature Importance
 
@@ -88,5 +101,37 @@ The AU code is the biggest factor in predicting GMP which is very interesting, f
 
 
 # Conclusions and Future Analysis
+
+While it is not surprising that Deprivation index and where you live (via the AU2017_code) are major indicators of GMP, crime rate doesn't seem to be as much of a factor. Or at least we can't draw conclusions from the crime data as there isn't enough of it. While, the DI and GMP change together over time when looking at larger areas, I think there is a lot to explore if we were to dig into the individual codes. Specifically identify areas in which the DI went up and GMP went (and visa versa). Is that a mistake in reporting or is there something real there?
+
+Association is interesting and provides a place to start looking, however, the real challenge is to help identify causation (which I'm sure is everyone's goal). 
+
+## Identify factors that are good predictors of GMP and/or DI, comparing them with areas that have gone up in GMP and/or DPI over time (either recently or in the past):
+
+-- School data:
+  - decile information
+  - government funding for schools
+
+-- Housing data:
+  - mean value of houses in each code
+  - percent ownership v rental
+
+-- Industry data:
+  - industry type
+  - mean wage
+  - percent employment of population
+
+-- Health data:
+  - how many people are getting sick
+  - what are their illnesses
+  - how serious
+  - how much does each illness cost
+
+-- Environmental data:
+  - what is the topology (is the location on the ocean, mountainous?)
+  - transport ease to and from
+
+These are just a few thoughts that would be fun to explore. The data I used isn't available in this repo as they were too large.
+
 
 
