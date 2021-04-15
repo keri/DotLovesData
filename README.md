@@ -3,7 +3,7 @@
 # Purpose
 
 To gain insight into two datasets the well being of NZ communities in Auckland based on their location, deprivation score, and crime data. Can we use this data to identify major predictors for productivity in the region denoted as GMP (gross metropolitan product) per capita which is a measure of goods and services produced within a metropolitan statistical area per person over a period of 
-time.
+time. I used python, pandas, matplotlib, and sklearn for all analysis done.
 
 # Questions to ask:
 
