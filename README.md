@@ -28,11 +28,21 @@ As compared to this same information for the remaining data without NA values. I
 
 # How does GMP and Deprication Index change over time and do they follow the same trend:
 
-The dataset was too large to visualize all regions (AU codes) at once and the final visual still needs work to be more interpretable. I calculated the CHANGE of deprivation score and GMP from the first and last date for each code and it was a bit of a mess as there are 489 codes. I also calculcated for just the TALB regions, of which there were 24. I wanted to see how the changes correlated with eacother as I noticed that some deprivation indices actually increased while the GMP went down, so I am looking for general trends here:
+After running training a good predictive model, the most important feature was the AU codes so I wanted to look at changes in GMP and DI over time. I noticed that a lot of the time, the GMP and DI went in opposite directions for that time period (meaning the GMP went up with the DI went down and vice versa). Interestingly when looking at the changes using just the TALB which incorporates may AU codes, the trend was the same for both with DI increasing with GMP. This meant that a lot of information is being missed when looking at many regions at once. I wanted to look at the AU codes that showed different directions of change over time so looked at regions in which GMP increased WITH DI decreased for the same period and the other looking at DI increase WITH GMP decrease:
 
-## GMP v Deprivation Index (DI) Over Time for all 498 different AU codes: GMP in blue and DI in red
+## AU Code Areas Showing An Increase in GMP WITH A Decrease in DI For Same Time Period
 
-![GMP versus DI over time for AU codes](/visuals/GMPvDIOverTimePerAUCode.png)
+There were 283 different regions and 509 dates with these regions to graph. I broke up the graph into 12 subplots and labeled the AU codes. Several of the same labels indicate there are several dates for that code
+
+![GMP increase WITH DI decrease over time for AU codes](/visuals/NegativeDIPositiveGMPOverTime.png)
+
+
+## AU Code Areas Showing An Decrease in GMP WITH A Increase in DI For Same Time Period
+
+There were 297 different regions and 604 dates with these regions to graph. I broke up the graph into 12 subplots and labeled the AU codes. Several of the same labels indicate there are several dates for that code
+
+![GMP decrease WITH DI increase over time for AU codes](/visuals/PositiveDINegativeGMPOverTime.png)
+
 
 ## GMP v DI Over Time for 24 different TALB regions 
 
